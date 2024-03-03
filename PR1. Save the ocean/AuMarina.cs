@@ -18,8 +18,13 @@ namespace PR1._Save_the_ocean
             Name = name;
             SuperFamily = "Au Marina";
             Weight = weight;
-            
-   
+
+            DegreeOfAffectLaboratory = InfoLocationNewDegreeOfAffect();
+
+            DegreeOfAffectCRAM = InfoCRAMNewDegreeOfAffect();
+
+
+
         }
 
         public override string DescriptionOfAffect()
@@ -49,6 +54,26 @@ namespace PR1._Save_the_ocean
         public override double InfoCRAMNewDegreeOfAffect()
         {
             return DegreeOfAffect - (DegreeOfAffect * DegreeOfAffect + 0);
+        }
+
+        public override string InfoFinalLaboratory()
+        {
+            if ((DegreeOfAffect/ DegreeOfAffectLaboratory) <= 5)
+            {
+                return $"El tractament aplicat ha reduït el GA fins al {(DegreeOfAffectLaboratory / DegreeOfAffect)}%. L’exemplar està recuperat i pot tornar al seu hàbitat. La teva experiència ha augmentat en +50XP.";
+            }
+            return $"El tractament aplicat ha reduït el GA fins al {(DegreeOfAffectLaboratory / DegreeOfAffect)}%. No ha estat prou efectiu i cal traslladar l’exemplar al centre. La teva experiència s’ha reduït en -20XP.";
+
+        }
+
+        public override string InfoFinalCRAM()
+        {
+            if ((DegreeOfAffect / DegreeOfAffectLaboratory) <= 5)
+            {
+                return $"El tractament aplicat ha reduït el GA fins al {(DegreeOfAffectCRAM / DegreeOfAffect)}%. L’exemplar està recuperat i pot tornar al seu hàbitat. La teva experiència ha augmentat en +50XP.";
+            }
+            return $"El tractament aplicat ha reduït el GA fins al {(DegreeOfAffectCRAM / DegreeOfAffect)}%. No ha estat prou efectiu i cal traslladar l’exemplar al centre. La teva experiència s’ha reduït en -20XP.";
+
         }
 
     }
