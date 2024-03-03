@@ -56,7 +56,7 @@ namespace oop
                 }
                 Console.ForegroundColor = ConsoleColor.Magenta;
 
-                Especie specieSelector = (Especie)Random(0, 2); /*Seleccion especie random*/
+                Especie specieSelector = (Especie)Random(0, 3); /*Seleccion especie random*/
 
                 string speciesInfoRescue = ""; /*Tabla de Rescate*/
                 string speciesInfoFicha = ""; /*Tabla de Información*/
